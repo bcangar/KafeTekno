@@ -76,11 +76,13 @@ namespace KafeTekno.UI
 
             //////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////////////////////////////////////////////////////////////
+            ///
             //SiparisForm 14-15 adımları yazdım geldim
             //Masadan ödemeyi yapıp kalkan müşterinin masa görüntüsü, boş ayarlanmıştır.
             if (siparis.Durum != SiparisDurum.Aktif)
                 lvi.ImageKey = "bos";
 
+            //Satır 110 a git
             //////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -104,6 +106,11 @@ namespace KafeTekno.UI
             }
             //Sipariş varsa , mevcut siparişi direkt döndür.
             return siparis;
+        }
+
+        private void tsmiGecmisSiparisler_Click(object sender, EventArgs e)
+        {
+            new GecmisSiparislerForm(db).ShowDialog(); //GecmisSiparislerForm a geçiyoruz.
         }
     }
 }
