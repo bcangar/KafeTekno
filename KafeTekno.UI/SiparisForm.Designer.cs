@@ -41,7 +41,7 @@
             this.btnOdemeAl = new System.Windows.Forms.Button();
             this.btnAnasayfa = new System.Windows.Forms.Button();
             this.dgvSiparisDetaylar = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblMasaNo = new System.Windows.Forms.Label();
             this.lblOdemeTutari = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisDetaylar)).BeginInit();
@@ -49,6 +49,7 @@
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
@@ -63,13 +64,24 @@
             this.btnEkle.TabIndex = 1;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // nudAdet
             // 
             this.nudAdet.Location = new System.Drawing.Point(147, 36);
+            this.nudAdet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudAdet.Name = "nudAdet";
             this.nudAdet.Size = new System.Drawing.Size(110, 20);
             this.nudAdet.TabIndex = 3;
+            this.nudAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cboUrun
             // 
@@ -82,6 +94,7 @@
             // 
             // label2
             // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(144, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
@@ -91,6 +104,7 @@
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(511, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 23);
@@ -120,6 +134,7 @@
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.Location = new System.Drawing.Point(473, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 23);
@@ -139,6 +154,7 @@
             this.btnSiparisIptal.TabIndex = 9;
             this.btnSiparisIptal.Text = "SİPARİŞ İPTAL";
             this.btnSiparisIptal.UseVisualStyleBackColor = false;
+            this.btnSiparisIptal.Click += new System.EventHandler(this.btnSiparisIptal_Click);
             // 
             // btnOdemeAl
             // 
@@ -152,6 +168,7 @@
             this.btnOdemeAl.TabIndex = 10;
             this.btnOdemeAl.Text = "ÖDEME AL";
             this.btnOdemeAl.UseVisualStyleBackColor = false;
+            this.btnOdemeAl.Click += new System.EventHandler(this.btnOdemeAl_Click);
             // 
             // btnAnasayfa
             // 
@@ -165,35 +182,45 @@
             this.btnAnasayfa.TabIndex = 11;
             this.btnAnasayfa.Text = "ANASAYFAYA DÖN";
             this.btnAnasayfa.UseVisualStyleBackColor = false;
+            this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
             // 
             // dgvSiparisDetaylar
             // 
+            this.dgvSiparisDetaylar.AllowUserToAddRows = false;
             this.dgvSiparisDetaylar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSiparisDetaylar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSiparisDetaylar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparisDetaylar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisDetaylar.Location = new System.Drawing.Point(17, 79);
+            this.dgvSiparisDetaylar.MultiSelect = false;
             this.dgvSiparisDetaylar.Name = "dgvSiparisDetaylar";
-            this.dgvSiparisDetaylar.Size = new System.Drawing.Size(385, 383);
+            this.dgvSiparisDetaylar.ReadOnly = true;
+            this.dgvSiparisDetaylar.RowHeadersVisible = false;
+            this.dgvSiparisDetaylar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSiparisDetaylar.Size = new System.Drawing.Size(407, 383);
             this.dgvSiparisDetaylar.TabIndex = 12;
+            this.dgvSiparisDetaylar.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvSiparisDetaylar_UserDeletingRow);
             // 
-            // label5
+            // lblMasaNo
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.Color.Tomato;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Lucida Sans", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(476, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(240, 162);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "00";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMasaNo.BackColor = System.Drawing.Color.Tomato;
+            this.lblMasaNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMasaNo.Font = new System.Drawing.Font("Lucida Sans", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMasaNo.ForeColor = System.Drawing.Color.White;
+            this.lblMasaNo.Location = new System.Drawing.Point(476, 79);
+            this.lblMasaNo.Name = "lblMasaNo";
+            this.lblMasaNo.Size = new System.Drawing.Size(240, 162);
+            this.lblMasaNo.TabIndex = 13;
+            this.lblMasaNo.Text = "00";
+            this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblOdemeTutari
             // 
             this.lblOdemeTutari.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblOdemeTutari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblOdemeTutari.Location = new System.Drawing.Point(595, 275);
             this.lblOdemeTutari.Name = "lblOdemeTutari";
             this.lblOdemeTutari.Size = new System.Drawing.Size(121, 26);
@@ -206,7 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 508);
             this.Controls.Add(this.lblOdemeTutari);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblMasaNo);
             this.Controls.Add(this.dgvSiparisDetaylar);
             this.Controls.Add(this.btnAnasayfa);
             this.Controls.Add(this.btnOdemeAl);
@@ -243,7 +270,7 @@
         private System.Windows.Forms.Button btnOdemeAl;
         private System.Windows.Forms.Button btnAnasayfa;
         private System.Windows.Forms.DataGridView dgvSiparisDetaylar;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblMasaNo;
         private System.Windows.Forms.Label lblOdemeTutari;
     }
 }

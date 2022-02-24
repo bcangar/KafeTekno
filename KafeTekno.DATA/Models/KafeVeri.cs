@@ -20,7 +20,8 @@ namespace KafeTekno.DATA.Models
 
         public List<Urun> Urunler { get; set; } = new List<Urun>();
 
-        public List<Siparis> AktifSiparisler { get; set; } = new List<Siparis>();
+        public List<Siparis> AktifSiparisler { get; set; } = new List<Siparis>(); 
+        //Şu anda aktif olarak, hangi masalardan sipariş verildiğinin bilgisini tutuyor.
 
         public List<Siparis> GecmisSiparisler { get; set; } = new List<Siparis>();
 

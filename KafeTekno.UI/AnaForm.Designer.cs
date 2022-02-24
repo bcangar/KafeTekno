@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lvwMasalar = new System.Windows.Forms.ListView();
             this.tsmiUrunler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGecmisSiparisler = new System.Windows.Forms.ToolStripMenuItem();
+            this.lvwMasalar = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,16 +46,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // lvwMasalar
-            // 
-            this.lvwMasalar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwMasalar.HideSelection = false;
-            this.lvwMasalar.Location = new System.Drawing.Point(0, 24);
-            this.lvwMasalar.Name = "lvwMasalar";
-            this.lvwMasalar.Size = new System.Drawing.Size(800, 539);
-            this.lvwMasalar.TabIndex = 1;
-            this.lvwMasalar.UseCompatibleStateImageBehavior = false;
-            // 
             // tsmiUrunler
             // 
             this.tsmiUrunler.Name = "tsmiUrunler";
@@ -67,6 +57,17 @@
             this.tsmiGecmisSiparisler.Name = "tsmiGecmisSiparisler";
             this.tsmiGecmisSiparisler.Size = new System.Drawing.Size(108, 20);
             this.tsmiGecmisSiparisler.Text = "Geçmiş Siparişler";
+            // 
+            // lvwMasalar
+            // 
+            this.lvwMasalar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvwMasalar.HideSelection = false;
+            this.lvwMasalar.Location = new System.Drawing.Point(0, 24);
+            this.lvwMasalar.Name = "lvwMasalar";
+            this.lvwMasalar.Size = new System.Drawing.Size(800, 539);
+            this.lvwMasalar.TabIndex = 1;
+            this.lvwMasalar.UseCompatibleStateImageBehavior = false;
+            this.lvwMasalar.DoubleClick += new System.EventHandler(this.lvwMasalar_DoubleClick);
             // 
             // AnaForm
             // 

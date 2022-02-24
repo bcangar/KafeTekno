@@ -19,7 +19,7 @@ namespace KafeTekno.DATA.Models
 
         public override string ToString()
         {
-            return $" {UrunAd}  ({BirimFiyat:n2)}";
+            return $" {UrunAd}  {BirimFiyat:n2}";
         }
 
 
